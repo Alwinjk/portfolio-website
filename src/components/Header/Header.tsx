@@ -92,7 +92,7 @@ export default function Header() {
             <Toolbar
                 sx={{
                     justifyContent: 'space-between',
-                    backgroundColor: '#000000', // pure black backgr
+                    backgroundColor: '#000000', // pure black background color
                     px: { xs: 2, sm: 3, md: 4},
                     maxWidth: 'xl',
                     mx: 'auto',

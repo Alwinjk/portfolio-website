@@ -50,7 +50,7 @@ const theme = createTheme({
     ].join(','),
     protestH1: {
       fontFamily: '"Protest Guerrilla", sans-serif',
-      fontSize: '3rem',
+      fontSize: '1.8rem',
       fontWeight: 400,
       textTransform: 'uppercase'
     },
