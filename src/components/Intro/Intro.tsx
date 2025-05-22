@@ -40,25 +40,25 @@ export default function Intro() {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: {xs: 'column', md: 'row'},
+                flexWrap: 'wrap',
+                alignItems: 'flex-start',
                 justifyContent: 'center',
                 mt: 10,
                 gap: 5,
+                px: { xs: 2, sm: 4, md: 6 },               // smaller padding on small devices
+                py: { xs: 3, md: 6 },
             }}
         >
             {cardItems.map((item) => (
                 <Card 
                     key={item.label}
                     sx={{
-                        display: 'flex',
-                        // backgroundColor: item.bgColor,
-                        // boxShadow: 4,
+                        width: {xs: 200, md:180},
+                        height: {xs: 170, md: 150},
                         background: item.bgColor,
                         border: '1px solid rgba(255, 255, 255, 0.3)',
                         borderRadius: 4,
-                        width: 200,
-                        height: 170,
                         color: 'white'
                     }}
                 >
@@ -108,12 +108,12 @@ export default function Intro() {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: isMobile ? 'column': 'row',
+                flexDirection: {xs: 'column', md: 'row'},
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: '70vh',
-                px:isMobile ? 2: 20,
-                gap: 4,
+                px: {xs: 2, sm: 6, md: 20},
+                gap: 4
             }}
         > 
             {/* title section */}
@@ -122,13 +122,15 @@ export default function Intro() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: isMobile ? 'center': 'flex-start',
-                    textAlign: isMobile ? 'center': 'left'
+                    textAlign: isMobile ? 'center': 'left',
+                    maxWidth: { xs: '100%', sm: 'none' }
                 }}
             >
                 <Typography
                     variant="h1"
                     sx={{
                         fontWeight: 700,
+                        fontSize: { xs: '2.5rem', sm: '4.5rem', md: '7rem' },
                         color: 'rgba(255, 255, 255)'
                     }}
                 >
@@ -138,6 +140,7 @@ export default function Intro() {
                     variant="h1"
                     sx={{
                         fontWeight: 700,
+                        fontSize: { xs: '2.5rem', sm: '4.5rem', md: '7rem' },
                         color: '#494848'
                     }}
                 >
@@ -148,25 +151,30 @@ export default function Intro() {
                 <Box
                     sx={{
                         mt: 1,
-                        width: '500px',
+                        width: {xs: '200px', md: '500px'},
                         height: '2px',
                         backgroundColor: '#494848'
                     }}
                 />
 
                 {/* Intro description section */}
-                <Typography
-                    variant="body1"
-                    // fontSize="23px"
-                    // color="#E0D6D6"
-                    sx={{
-                        color: '#E0D6D6',
-                        fontSize: '23px',
-                        mt: 7
-                    }}
+                <Box 
+                    display="flex"
+                    flexDirection="column"
                 >
-                    Innovative software engineer passionate about providing solutions tailored to client needs. Expertises in full stack development of web applications. 
-                </Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: '#E0D6D6',
+                            fontSize: { xs: '1.0rem', sm: '1.5rem', md: '2.1rem' },
+                            mt: 7,
+                            textAlign: {xs: 'center', md: 'left'}
+                        }}
+                    >
+                        Innovative software engineer passionate about providing solutions tailored to client needs. Expertises in full stack development of web applications. 
+                    </Typography>
+                </Box>
+                
 
                 {/* Skill card section */}
                 {skillCards}
@@ -188,7 +196,7 @@ export default function Intro() {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        width: 400,
+                        width: { xs: '100%', md: '100%'},
                         height: 600,
                         borderRadius: 6,
                         boxShadow: 3,
@@ -200,8 +208,8 @@ export default function Intro() {
                         alt="Alwin Jose Kurian"
                         src="/images/profile.jpeg"
                         sx={{
-                            width: 270,
-                            height: 360,
+                            width: '75%',
+                            height: '60%',
                             borderRadius: 6,
                             boxShadow: 5,
                             mb: 3

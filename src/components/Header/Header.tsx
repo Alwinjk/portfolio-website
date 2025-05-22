@@ -99,22 +99,6 @@ export default function Header() {
                     width: '100%'
                 }}
             >
-                {/* <Typography
-                    variant="protestH1"
-                    component="a"
-                    href="/"
-                    sx={{
-                        fontWeight: 700,
-                        letterSpacing: 1,
-                        color: 'white',
-                        textDecoration: 'none',
-                        '&:hover': {
-                            color: 'primary.main'
-                        }
-                    }}
-                >
-                    Alwin Jose Kurian
-                </Typography> */}
                 {isMobile ? (
                     <>
                         <IconButton
@@ -124,20 +108,20 @@ export default function Header() {
                             onClick={() => setDrawerOpen(true)}
                         >
                             <MenuIcon />
-                            <Drawer
-                                anchor="left"
-                                open={drawerOpen}
-                                onClose={() => setDrawerOpen(false)}
-                                PaperProps={{
-                                    sx: {
-                                        backgroundColor: '#000000',
-                                        borderRight: '1px solid rgba(255, 255, 255, 0.12)'
-                                    }
-                                }}
-                            >
-                                {drawer}
-                            </Drawer>
                         </IconButton>
+                        <Drawer
+                            anchor="left"
+                            open={drawerOpen}
+                            onClose={() => setDrawerOpen(false)}
+                            PaperProps={{
+                                sx: {
+                                    backgroundColor: '#000000',
+                                    borderRight: '1px solid rgba(255, 255, 255, 0.12)'
+                                }
+                            }}
+                        >
+                            {drawer}
+                        </Drawer>
                     </>
                 ) : (
                     <Box
