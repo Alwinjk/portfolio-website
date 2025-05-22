@@ -1,19 +1,13 @@
 import { 
-    Avatar,
     Box, 
     Button, 
     Card,
     CardContent, 
-    IconButton, 
     Typography, 
     useMediaQuery, 
     useTheme
 } from "@mui/material";
 
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import { ArrowForward } from "@mui/icons-material";
 
 type CardItem = {
@@ -40,14 +34,19 @@ export default function Intro() {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: {xs: 'column', md: 'row'},
+                flexDirection: {xs: 'column', sm: 'row', md: 'row'},
                 flexWrap: 'wrap',
-                alignItems: 'flex-start',
-                justifyContent: 'center',
+                alignItems: {
+                    xs: 'center', // cards will align center in a column for mobile
+                    sm: 'center', // have no effect as cards are placed in row for tabs
+                }, // for column
+                justifyContent: {
+                    xs: 'left', // have no effect as cards are placed in column for mobile
+                    sm: 'center', // cards will align to the center for tab in a row
+                    md: 'left' // cards will align to the left for desktop in a row
+                }, // for row
                 mt: 10,
-                gap: 5,
-                px: { xs: 2, sm: 4, md: 6 },               // smaller padding on small devices
-                py: { xs: 3, md: 6 },
+                gap: 4
             }}
         >
             {cardItems.map((item) => (
@@ -104,33 +103,34 @@ export default function Intro() {
 
 
     return (
-        // intro main container. Job title and profile card should go inside here.
+        // intro main container. Job title, description and skill card sections go here.
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: {xs: 'column', md: 'row'},
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '70vh',
+                flexDirection: {xs: 'column', sm: 'column', md: 'row'},
+                // alignItems: 'center',
+                // justifyContent: 'center',
+                // minHeight: '70vh',
                 px: {xs: 2, sm: 6, md: 20},
                 gap: 4
             }}
         > 
-            {/* title section */}
+            {/* Left Side (Title + Horizontal Line + Description) */}
             <Box
                 sx={{
+                    flex: 1,
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: isMobile ? 'center': 'flex-start',
-                    textAlign: isMobile ? 'center': 'left',
-                    maxWidth: { xs: '100%', sm: 'none' }
+                    // alignItems: {xs: 'center', sm: 'center', md: 'left'},
+                    textAlign: {xs: 'center', sm: 'center', md: 'left'},
+                    // justifyContent: {xs: 'center', sm: 'center', md: 'left'}
                 }}
             >
                 <Typography
                     variant="h1"
                     sx={{
                         fontWeight: 700,
-                        fontSize: { xs: '2.5rem', sm: '4.5rem', md: '7rem' },
+                        fontSize: { xs: '2.3rem', sm: '4.0rem', md: '7rem' },
                         color: 'rgba(255, 255, 255)'
                     }}
                 >
@@ -140,7 +140,7 @@ export default function Intro() {
                     variant="h1"
                     sx={{
                         fontWeight: 700,
-                        fontSize: { xs: '2.5rem', sm: '4.5rem', md: '7rem' },
+                        fontSize: { xs: '2.3rem', sm: '4.0rem', md: '7rem' },
                         color: '#494848'
                     }}
                 >
@@ -151,7 +151,8 @@ export default function Intro() {
                 <Box
                     sx={{
                         mt: 1,
-                        width: {xs: '200px', md: '500px'},
+                        mx: { xs: 'auto', sm: 'auto', md: 0 }, // auto will center and 0 will put on left
+                        width: {xs: 200, sm: 343, md: 532},
                         height: '2px',
                         backgroundColor: '#494848'
                     }}
@@ -182,7 +183,7 @@ export default function Intro() {
 
             
             {/* profile card section */}
-            <Box
+            {/* <Box
                 // position="sticky"
                 sx={{
                     display: 'flex',   
@@ -236,7 +237,7 @@ export default function Intro() {
                         "Build. Solve. Repeat."
                     </Typography>
                     {/* Social media icons */}
-                    <Box
+                    {/* <Box
                         sx={{ display: 'flex', gap: 2, mt: 3 }}
                     >
                         <IconButton
@@ -283,7 +284,7 @@ export default function Intro() {
                         </IconButton>
                     </Box>
                 </Card>
-            </Box>
+            </Box> */}
 
             
 
