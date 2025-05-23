@@ -18,10 +18,7 @@ type CardItem = {
     color?: string
 };
 
-
-
 const cardItems: CardItem[] = [
-    // { label: 'UI/UX', path: '/ui-ux', bgColor: "linear-gradient(135deg,rgb(215, 188, 219),rgb(246, 34, 1),rgb(246, 205, 1))"},
     { label: 'UI/UX', path: '/ui-ux', bgColor: "#F46C39"},
     { label: 'BACKEND', path: '/backend', bgColor: "linear-gradient(135deg,rgb(119, 113, 120),rgb(130, 138, 54),rgb(101, 94, 61))"},
     { label: 'CLOUD', path: '/cloud', bgColor: "rgb(142, 210, 130)"},
