@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Intro from "../Intro/Intro";
 import ProfileCard from "../ProfileCard/ProfileCard";
+import Experience from "../Experience/Experience";
 
 
 
@@ -11,11 +12,11 @@ export default function Main() {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: {xs: 'column', md: 'row'}
+                flexDirection: 'column'
             }}
         >
             <Intro />
-            <ProfileCard />
+            <Experience />
         </Box>
     )
 }

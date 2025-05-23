@@ -17,9 +17,11 @@ export default function ProfileCard() {
     return (
         <Box
             sx={{
-                display: 'flex',   
+                display: 'flex',
+                flexDirection: 'column',
+                // justifyContent: 'center',
                 alignItems: 'center',
-                justifyContent: 'center'
+                pt: 3 // good
             }}
         >
             <Card
@@ -27,11 +29,12 @@ export default function ProfileCard() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    width: { xs: '100%', md: '100%'},
-                    height: 600,
+                    width: '90%',
+                    height: {xs: 550, sm: 950, md: 600},
                     borderRadius: 6,
                     boxShadow: 3,
+                    pt: {xs: 3, md: 3},
+                    px: {xs: 3, md: 6},
                     // backgroundColor: '#F46C39'
                     background: 'linear-gradient(135deg,rgb(215, 188, 219),rgb(246, 34, 1),rgb(246, 205, 1))'
                 }}
@@ -40,11 +43,14 @@ export default function ProfileCard() {
                     alt="Alwin Jose Kurian"
                     src="/images/profile.jpeg"
                     sx={{
-                        width: '75%',
-                        height: '60%',
+                        // width: {xs: '80%', sm: '70%', md: '90%'},
+                        // height: {xs: '50%', sm: '60%', md: '50%'},
+                        width: { xs: 200, sm: 500, md: 250 },  // Responsive width
+                        height: { xs: 300, sm: 600, md: 300 },
+                        objectFit: 'cover', // Ensures image fills the avatar area properly
                         borderRadius: 6,
                         boxShadow: 5,
-                        mb: 3
+                        my: 4
                     }}
                 />
                 <Typography

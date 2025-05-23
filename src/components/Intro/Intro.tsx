@@ -3,12 +3,13 @@ import {
     Button, 
     Card,
     CardContent, 
-    Typography, 
+    Typography,
     useMediaQuery, 
     useTheme
 } from "@mui/material";
 
 import { ArrowForward } from "@mui/icons-material";
+import ProfileCard from "../ProfileCard/ProfileCard";
 
 type CardItem = {
     label: string;
@@ -45,7 +46,7 @@ export default function Intro() {
                     sm: 'center', // cards will align to the center for tab in a row
                     md: 'left' // cards will align to the left for desktop in a row
                 }, // for row
-                mt: 10,
+                mt: 5,
                 gap: 4
             }}
         >
@@ -108,9 +109,6 @@ export default function Intro() {
             sx={{
                 display: 'flex',
                 flexDirection: {xs: 'column', sm: 'column', md: 'row'},
-                // alignItems: 'center',
-                // justifyContent: 'center',
-                // minHeight: '70vh',
                 px: {xs: 2, sm: 6, md: 20},
                 gap: 4
             }}
@@ -160,8 +158,10 @@ export default function Intro() {
 
                 {/* Intro description section */}
                 <Box 
-                    display="flex"
-                    flexDirection="column"
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
                 >
                     <Typography
                         variant="body1"
@@ -180,111 +180,9 @@ export default function Intro() {
                 {/* Skill card section */}
                 {skillCards}
             </Box>
-
-            
+ 
             {/* profile card section */}
-            {/* <Box
-                // position="sticky"
-                sx={{
-                    display: 'flex',   
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}
-            >
-                <Card
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: { xs: '100%', md: '100%'},
-                        height: 600,
-                        borderRadius: 6,
-                        boxShadow: 3,
-                        // backgroundColor: '#F46C39'
-                        background: 'linear-gradient(135deg,rgb(215, 188, 219),rgb(246, 34, 1),rgb(246, 205, 1))'
-                    }}
-                >
-                    <Avatar
-                        alt="Alwin Jose Kurian"
-                        src="/images/profile.jpeg"
-                        sx={{
-                            width: '75%',
-                            height: '60%',
-                            borderRadius: 6,
-                            boxShadow: 5,
-                            mb: 3
-                        }}
-                    />
-                    <Typography
-                        variant="protestH1"
-                        sx={{
-                            fontWeight: 600,
-                            letterSpacing: 1,
-                            color: '#494848',
-                            textAlign: 'center'
-                        }}
-                    >
-                        ALWIN JOSE KURIAN
-                    </Typography>
-                    <Typography
-                        sx={{
-                            letterSpacing: 1,
-                            color: 'white',
-                            textAlign: 'center'
-                        }}
-                    >
-                        "Build. Solve. Repeat."
-                    </Typography>
-                    {/* Social media icons */}
-                    {/* <Box
-                        sx={{ display: 'flex', gap: 2, mt: 3 }}
-                    >
-                        <IconButton
-                            component="a"
-                            href="mailto:alwinjk1997@gmail.com"
-                            sx={{
-                                color: 'black'
-                            }}
-                        >
-                            <EmailIcon />
-                        </IconButton>
-                        <IconButton
-                            component="a"
-                            href="https://www.linkedin.com/in/alwin-jose-kurian"
-                            target="_blank"
-                            rel="noopener"
-                            sx={{
-                                color: 'black'
-                            }}
-                        >
-                            <LinkedInIcon />
-                        </IconButton>
-                        <IconButton
-                            component="a"
-                            href="https://github.com/Alwinjk"
-                            target="_blank"
-                            rel="noopener"
-                            sx={{
-                                color: 'black'
-                            }}
-                        >
-                            <GitHubIcon />
-                        </IconButton>
-                        <IconButton
-                            component="a"
-                            href="https://www.instagram.com/alwin_jose_kurian/"
-                            target="_blank"
-                            rel="noopener"
-                            sx={{
-                                color: 'black'
-                            }}
-                        >
-                            <InstagramIcon />
-                        </IconButton>
-                    </Box>
-                </Card>
-            </Box> */}
+            <ProfileCard />
 
             
 
