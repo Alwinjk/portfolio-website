@@ -10,6 +10,8 @@ import {
 
 import { ArrowForward } from "@mui/icons-material";
 import ProfileCard from "../ProfileCard/ProfileCard";
+import ResumeModal from "../ResumeModal/ResumeModal";
+import { useState } from "react";
 
 type CardItem = {
     label: string;
@@ -27,6 +29,8 @@ const cardItems: CardItem[] = [
 export default function Intro() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+    const [openResume, setOpenResume] = useState(false);
 
     const skillCards = (
         <Box
@@ -92,6 +96,7 @@ export default function Intro() {
                                 },
                                 color: 'white'
                             }}
+                            onClick={() => setOpenResume(true)} // open modal
                         />
                     </CardContent>
                 </Card>
@@ -181,7 +186,8 @@ export default function Intro() {
             {/* profile card section */}
             <ProfileCard />
 
-            
+            {/* Resume Modal */}
+            <ResumeModal open={openResume} onClose={() => setOpenResume(false)} />
 
         </Box>
         
