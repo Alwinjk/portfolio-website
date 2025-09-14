@@ -1,12 +1,8 @@
 import { Box } from "@mui/material";
 import Intro from "../Intro/Intro";
-import ProfileCard from "../ProfileCard/ProfileCard";
 import Experience from "../Experience/Experience";
 
-
-
 export default function Main() {
-    
 
     return (
         <Box

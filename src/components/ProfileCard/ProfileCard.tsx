@@ -41,7 +41,7 @@ export default function ProfileCard() {
             >
                 <Avatar
                     alt="Alwin Jose Kurian"
-                    src="/images/profile.jpeg"
+                    src="/images/profile.png"
                     sx={{
                         // width: {xs: '80%', sm: '70%', md: '90%'},
                         // height: {xs: '50%', sm: '60%', md: '50%'},
